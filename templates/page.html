@@ -4,17 +4,39 @@
 {% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
 
 {% block header %}
-<header class="space">
-    <a href="{{ config.base_url }}">&LeftArrow; Home</a>
+<header class="doublespace footnote-definition">
+    <a href="javascript:history.go(-1)">&LeftArrow; Back</a>
 </header>
+
+{% if page.extra.math %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" integrity="sha384-HORx6nWi8j5/mYA+y57/9/CZc5z8HnEw4WUZWy5yOn9ToKBv1l58vJaufFAn9Zzi" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+{% endif %}
+
 {% endblock header %}
 
 {% block content %}
 <main>
-    <h1>{{ page.title }}</h1>
+    <div class="doublespace">
+    <h1>{{ page.title | capitalize }}</h1>
     {% if page.date or page.taxonomies %}
     <p class="secondary small">
-        {% if page.date %}{{ page.date | date(format="%-d %B, %Y") }}{% endif %}
+        {% if page.date %}{{ page.date | date(format="%-d %b, %Y") }}{% endif %}
 
         {% set_global sorted_taxonomies = [] %}
         {% for taxonomy_name, _ in page.taxonomies %}
@@ -24,15 +46,15 @@
 
         {% for taxonomy_name in sorted_taxonomies %}
         {% set terms = page.taxonomies[taxonomy_name] %}
-        - {{ taxonomy_name | capitalize }}:
+        - 
         {% for term_name in terms %}
         {% set term = get_taxonomy_term(kind=taxonomy_name, term=term_name) %}
-        <a href="{{ term.permalink }}">{{ term.name }}</a>{% if not loop.last %},{% endif %}
+        <a href="{{ term.permalink }}"># {{ term.name }}</a>{% if not loop.last %},{% endif %}
         {% endfor %}
         {% endfor %}
     </p>
+    </div>
     {% endif %}
-    <div class="space"></div>
     {{ page.content | safe }}
 </main>
 {% endblock content %}

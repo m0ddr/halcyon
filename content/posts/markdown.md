@@ -2,13 +2,7 @@
 title = "Markdown example"
 description = "This page demonstrates how Markdown looks in the Hook theme for Zola"
 date = 2021-07-30
-taxonomies.tags = [
-    "markdown",
-    "syntax",
-]
-taxonomies.categories = [
-    "intro"
-]
+taxonomies.tags = ["markdown","syntax"]
 +++
 
 This post is a markdown example.

@@ -1,23 +1,21 @@
 @mixin light-theme {
-    --foreground: #222222;
-    --background: #eeeeee;
-    --secondary: #808080;
-    --tertiary: #dddddd;
-    --accent: #3d3cba;
-    --accent-highlight: #171746;
-    --table-border: #d0d0d0;
-    --table-row: #f7f7f7;
+  --foreground: #2a3033;        // Darker cool charcoal for 8.2:1 contrast
+  --background: #f8f9fa;        // Cool off-white
+  --secondary: #556066;         // Darker cool gray for 4.7:1 contrast
+  --tertiary: #e4e8eb;          // Cool light gray
+  --accent: #2d5a4a;            // Darker sage green for 4.5:1 contrast
+  --table-border: #d1d7db;      
+  --table-row: #eff2f4f1;         // Lighter for more distinction
 }
 
 @mixin dark-theme {
-    --foreground: #eeeeee;
-    --background: #161616;
-    --secondary: #999999;
-    --tertiary: #444444;
-    --accent: #959bf0;
-    --accent-highlight: #c2c5f6;
-    --table-border: var(--tertiary);
-    --table-row: #1e1e1e;
+  --foreground: #e6e9eb;        // Brighter cool light gray for 8.1:1 contrast
+  --background: #1c1e20;        // Cool dark gray
+  --secondary: #a1a6a9;         // Brighter cool medium gray for 4.5:1 contrast
+  --tertiary: #3a3d3f;          // Cool dark gray
+  --accent: #8fb3a0;            // Brighter sage for 4.6:1 contrast
+  --table-border: var(--tertiary);
+  --table-row: #242729;         // Lighter for better distinction
 }
 
 :root.light-mode {
@@ -93,24 +91,46 @@ body {
     background-color: var(--background);
 }
 
+.accent {
+    color: var(--accent);
+}
 .secondary {
     color: var(--secondary);
 }
 
 a, a:link, a:visited {
     color: var(--accent);
+    text-decoration: none;
 }
 
 a:hover {
-    color: var(--accent-highlight);
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.anchor {
+    color: var(--table-row) !important;
+}
+
+.anchor:hover {
+    color: var(--accent) !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .anchor {
+  color: var(--accent) !important;
 }
 
 blockquote {
-    border-left: 2px solid var(--secondary);
+    color: var(--secondary);
+    border-left: 1px solid var(--secondary);
 }
 
 code {
     background-color: var(--tertiary);
+}
+
+pre {
+    border: 1px solid var(--table-border)
 }
 
 pre code {

@@ -5,12 +5,19 @@
 {% block content %}
 <main>
     <h1>{{ section.title }}</h1>
+    {% if section.content %}
+    <div class="secondary">
+    {{ section.content | safe }}
+    </div>
+    {% endif %}
     {% if section.pages %}
     {% for year, posts in section.pages | group_by(attribute="year") %}
     <h2>{{ year }}</h2>
     <ul>
         {% for post in posts %}
-        <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.permalink }}">{{ post.title }}</a>
+        {% if post.date %}<span class="secondary small">({{ post.date | date(format="%d %b, %Y") }})</span>{% endif %}
+        </li>
         {% endfor %}
     </ul>
     {% endfor %}

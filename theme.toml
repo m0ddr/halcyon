@@ -1,10 +1,9 @@
-name = "Hook"
+name = "halcyon"
 description = "Clean and simple personal site/blog theme"
 license = "MIT"
-homepage = "https://github.com/InputUsername/zola-hook"
-min_version = "0.19.0"
-demo = "https://inputusername.github.io/zola-hook/"
+homepage = "https://github.com/m0ddr/halcyon"
+min_version = "0.1.0"
 
 [author]
-name = "Koen Bolhuis"
-homepage = "https://koen.bolhu.is"
+name = "M0ddr"
+homepage = "https://github.com/m0ddr"

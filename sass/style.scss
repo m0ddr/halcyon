@@ -6,12 +6,48 @@ html, body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14pt;
-
-    line-height: 1.3em;
-
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
     padding: 5em 25%;
+}
+
+main, header {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    .avatar {
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    .info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .info-header {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+
+.anchor {
+    margin: 0 0.5rem;
 }
 
 .header-links {
@@ -25,23 +61,36 @@ body {
 }
 
 .space {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .doublespace {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 .small {
-    font-size: 75%;
+    font-size: 90%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.25;
+    line-height: 1;
 }
 
 img {
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.video[src*="youtube.com"],
+.video[src*="youtube-nocookie.com"],
+.video[src*="youtu.be"] {
+    aspect-ratio: 16 / 9;
 }
 
 blockquote {
@@ -51,12 +100,12 @@ blockquote {
 
 code {
     padding: 0.1em 0.2em;
-    font-size: 12pt;
+    font-size: 0.8em;
 }
 
 pre {
     overflow: auto;
-    padding: 0.3em;
+    padding: 1em;
 
     code {
         padding: 0;
@@ -66,7 +115,7 @@ pre {
 .footnote-definition {
     margin-top: 1em;
 
-    font-size: 75%;
+    font-size: 90%;
 
     p {
         display: inline;
@@ -78,17 +127,17 @@ pre {
 }
 
 .footnotes-list {
-    font-size: 75%;
+    font-size: 90%;
 }
 
-table {
+table:not(pre table) {
     border-spacing: 0;
 
     th, td {
         border-width: 1px;
         border-style: solid;
         border-left-style: none;
-        padding: 0.2em;
+        padding: 0.5em;
 
         &:first-child {
             border-left-width: 1px;
@@ -116,4 +165,63 @@ table {
     body {
         padding: 1em 1em;
     }
+}
+
+.code-container {
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.034);
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: #e2e8f0;
+    transition: fill 0.2s ease;
+}
+
+.copy-btn.copied {
+    background: rgba(72, 187, 120, 0.2);
+    border-color: rgba(72, 187, 120, 0.4);
+}
+
+.copy-btn.copied svg {
+    fill: #48bb78;
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 0.5em;
+}
+
+.repo-stats svg {
+  display: inline;
+  vertical-align: text-bottom;
+  margin-right: 0.2em;
 }
