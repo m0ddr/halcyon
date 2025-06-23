@@ -33,7 +33,7 @@
 {% block content %}
 <main>
     <div class="doublespace">
-    <h1>{{ page.title | capitalize }}</h1>
+    <h1>{{ page.title }}</h1>
     {% if page.date or page.taxonomies %}
     <p class="secondary small">
         {% if page.date %}{{ page.date | date(format="%-d %b, %Y") }}{% endif %}

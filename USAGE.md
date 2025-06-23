@@ -73,6 +73,15 @@ Your homepage content goes here.
 ```
 
 ### Blog Posts
+Create `content/posts/_index.md`:
+```markdown
++++
+title = "Section Title"
+sort_by = "date"
+insert_anchor_links = "right"
++++
+```
+
 Create posts in `content/posts/`:
 
 ```markdown

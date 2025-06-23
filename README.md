@@ -22,7 +22,7 @@ zola init my-blog && cd my-blog
 git clone https://github.com/m0ddr/halcyon themes/halcyon
 
 # Configure in config.toml
-echo 'theme = "halcyon"' >> config.toml
+theme = "halcyon"
 ```
 
 ## Documentation
