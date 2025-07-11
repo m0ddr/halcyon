@@ -36,7 +36,7 @@
     <h1>{{ page.title }}</h1>
     {% if page.date or page.taxonomies %}
     <p class="secondary small">
-        {% if page.date %}{{ page.date | date(format="%-d %b, %Y") }}{% endif %}
+        {% if page.date %}{{ page.date | date(format="%-d %b, %Y") }} • {% endif %} {{ page.reading_time }} minute read 
 
         {% set_global sorted_taxonomies = [] %}
         {% for taxonomy_name, _ in page.taxonomies %}
