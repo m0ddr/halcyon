@@ -1,21 +1,21 @@
 @mixin light-theme {
-  --foreground: #2a3033;  
-  --background: #f8f9fa;
-  --secondary: #556066;
-  --tertiary: #e4e8eb;
-  --accent: #2d5a4a;
-  --table-border: #d1d7db;
-  --table-row: #eff2f4f1;
+  --foreground: #000000;  
+  --background: #ffffff;
+  --secondary: #4a4a4a;
+  --tertiary: #f5f5f5;
+  --accent: #0066cc;
+  --table-border: #cccccc;
+  --table-row: #f9f9f9;
 }
 
 @mixin dark-theme {
-  --foreground: #e6e9eb;  
-  --background: #1c1e20;
-  --secondary: #a1a6a9;
-  --tertiary: #3a3d3f;
-  --accent: #8fb3a0;
-  --table-border: var(--tertiary);
-  --table-row: #242729;
+  --foreground: #ffffff;
+  --background: #121212;
+  --secondary: #b3b3b3;
+  --tertiary: #2a2a2a;
+  --accent: #66b3ff;
+  --table-border: #444444;
+  --table-row: #1a1a1a;
 }
 
 :root.light-mode {
@@ -122,7 +122,9 @@ a:hover {
 
 blockquote {
     color: var(--secondary);
-    border-left: 1px solid var(--secondary);
+    border-left: 1px solid var(--accent);
+    padding-left: 1em;
+    margin-left: 0;
 }
 
 code {
