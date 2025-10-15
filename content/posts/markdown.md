@@ -11,7 +11,7 @@ Here is [a link](http://example.com).
 
 Some *italic text* and **bold text** and ~~strikethrough text~~ and `inline code`. [^1]
 
-```rust
+```rust,linenos
 // Here is a code block
 
 fn main() {

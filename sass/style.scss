@@ -1,10 +1,8 @@
-// Theme Variables and Mixins
 @mixin light-theme {
   --foreground: #000000;
   --background: #ffffff;
   --background-elevated: #f8f8f8;
   --secondary: #4a4a4a;
-  --tertiary: #f5f5f5;
   --accent: #0066cc;
   --table-border: #888888;
   --table-row: #f9f9f9;
@@ -15,13 +13,11 @@
   --background: #121212;
   --background-elevated: #1a1a1a;
   --secondary: #b3b3b3;
-  --tertiary: #2a2a2a;
   --accent: #66b3ff;
   --table-border: #444444;
   --table-row: #1a1a1a;
 }
 
-// Theme Application
 :root.light-mode {
     @include light-theme;
 
@@ -74,14 +70,13 @@
     }
 }
 
-// Base Styles
 html, body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.3;
@@ -163,7 +158,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 3rem;
 }
 
-// Links
 a, a:link, a:visited {
     color: var(--accent);
     font-weight: 600;
@@ -203,7 +197,7 @@ blockquote {
 code {
     padding: 0.1em 0.2em;
     font-size: 0.8em;
-    background-color: var(--tertiary);
+    background-color: var(--background-elevated);
 }
  
 pre {
@@ -215,6 +209,12 @@ pre {
         padding: 0;
         background-color: transparent;
     }
+}
+
+pre table td:first-child {
+    padding-right: 1em;
+    user-select: none;
+    text-align: right;
 }
 
 .code-container pre {
@@ -287,13 +287,11 @@ table:not(pre table) {
     }
 }
 
-// Horizontal rules
 hr {
     border: none;
     border-bottom: 1px solid var(--table-border);
 }
 
-// Dark mode toggle
 .dark-mode-buttons {
     position: absolute;
     top: 1em;
@@ -355,7 +353,7 @@ hr {
 }
 
 .copy-btn {
-    background: var(--tertiary);
+    background: var(--background-elevated);
     border: 1px solid var(--table-border);
     border-radius: 4px;
     padding: 6px;
