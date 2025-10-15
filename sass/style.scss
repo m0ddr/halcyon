@@ -1,21 +1,23 @@
 @mixin light-theme {
-  --foreground: #000000;
-  --background: #ffffff;
-  --background-elevated: #f8f8f8;
-  --secondary: #4a4a4a;
-  --accent: #0066cc;
-  --table-border: #888888;
-  --table-row: #f9f9f9;
+  --foreground: #2a2a2a;
+  --background: #ddd5c7;
+  --background-elevated: #ccc2b3;
+  --secondary: #5a5a5a;
+  --accent: #964308;
+  --accent-muted: #e8b896;
+  --table-border: #8a7968;
+  --table-row: #d5cbb9;
 }
 
 @mixin dark-theme {
-  --foreground: #ffffff;
-  --background: #121212;
-  --background-elevated: #1a1a1a;
-  --secondary: #b3b3b3;
-  --accent: #66b3ff;
-  --table-border: #444444;
-  --table-row: #1a1a1a;
+  --foreground: #e8dcc6;
+  --background: #1f1f1c;
+  --background-elevated: #2b2b26;
+  --secondary: #a69b8f;
+  --accent: #ff7b47;
+  --accent-muted: #4a2c1a;
+  --table-border: #5a5347;
+  --table-row: #2a2721;
 }
 
 :root.light-mode {
@@ -129,6 +131,11 @@ main, header {
 
 .anchor {
     margin: 0 0.5rem;
+    color: var(--background-elevated) !important;
+}
+
+.anchor:hover {
+    color: var(--accent) !important;
 }
 
 .header-links {
@@ -349,6 +356,7 @@ hr {
     color: var(--foreground);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-left: 4px;
     opacity: 0.8;
 }
 
@@ -366,7 +374,7 @@ hr {
 }
 
 .copy-btn:hover {
-    background: var(--accent);
+    background: var(--accent-muted);
     border-color: var(--accent);
 }
 

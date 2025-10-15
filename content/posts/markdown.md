@@ -53,6 +53,10 @@ Ordered list:
 |--------------|------------------|----------------------------|
 | They even    | have alternating | row colors!                |
 | Let me add   | another row so   | it's easier to see.        |
+| Row number   | four to test     | the alternating pattern    |
+| And here's   | row number five  | for better testing         |
+| Even more    | data in row six  | to see the full pattern    |
+| Final row    | number seven     | completes the example      |
 
 [^1]: A footnote. Footnotes can be used for things that could have explanation or extra context, but
 for which the explanation is not relevant or otherwise desirable to have inline.
