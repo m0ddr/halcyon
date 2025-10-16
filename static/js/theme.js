@@ -1,4 +1,4 @@
-const cls = document.querySelector("html").classList;
+const cls = document.documentElement.classList;
 const sessionTheme = sessionStorage.getItem("theme");
 
 const setDark = () => {

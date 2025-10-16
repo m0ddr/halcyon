@@ -25,8 +25,9 @@ const init = () => {
 document.addEventListener('click', async e => {
   const b = e.target.closest('.copy-btn');
   if (!b) return;
-  
-  const pre = b.closest('.code-container').querySelector('pre');
+
+  const container = b.closest('.code-container');
+  const pre = container.querySelector('pre');
   const t = pre.textContent;
   
   try {
