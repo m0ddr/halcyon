@@ -11,7 +11,7 @@ A modern, feature-rich Zola theme that combines the performance foundation of [z
 - **Media Support** - YouTube embedding and responsive video containers
 - **Code Enhancement** - One-click copying with visual feedback
 - **Refined Design** - Improved accessibility, colors, and typography
-- **High Performance** - 113 lines of JS, smart caching, progressive enhancement
+- **High Performance** - 162 lines of JS, smart caching, progressive enhancement
 
 ## Quick Start
 ```bash
@@ -29,9 +29,9 @@ theme = "halcyon"
 - **[Usage Guide](USAGE.md)** - Detailed configuration and content creation
 
 ## Theme Stats
-- **Total Lines:** 887 (687 core theme code)
-- **Bundle Size:** Lightweight and optimized
-- **Performance:** Excellent Lighthouse scores
+- **Total Lines:** 908 (908 core theme code)
+- **Bundle Size:** CSS 6.1KB, JS 5.6KB - Lightweight and optimized
+- **Performance:** Excellent Lighthouse scores, 55ms build time
 - **Accessibility:** WCAG 2.1 compliant
 
 ## Contributing
