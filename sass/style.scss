@@ -1,23 +1,23 @@
 @mixin light-theme {
   --foreground: #2a2a2a;
-  --background: #c9bfb0;
-  --background-elevated: #b8ad9c;
+  --background: #fafafa;
+  --background-elevated: #e8e8e8;
   --secondary: #5a5a5a;
   --accent: #964308;
-  --accent-muted: #e8b896;
-  --table-border: #8a7968;
-  --table-row: #d5cbb9;
+  --accent-muted: #f5d4c0;
+  --table-border: #d0d0d0;
+  --table-row: #f5f5f5;
 }
 
 @mixin dark-theme {
-  --foreground: #e8dcc6;
-  --background: #1f1f1c;
-  --background-elevated: #2b2b26;
-  --secondary: #a69b8f;
-  --accent: #ff7b47;
-  --accent-muted: #4a2c1a;
-  --table-border: #5a5347;
-  --table-row: #2a2721;
+  --foreground: #e5e5e5;
+  --background: #1a1a1a;
+  --background-elevated: #2c2c2c;
+  --secondary: #a5a5a5;
+  --accent: #ff8c52;
+  --accent-muted: #3d2410;
+  --table-border: #3a3a3a;
+  --table-row: #202020;
 }
 
 :root.light-mode {
