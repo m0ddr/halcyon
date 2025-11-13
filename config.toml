@@ -26,5 +26,5 @@ bottom_footnotes = true
 [extra]
 # Put all your custom variables here'
 links = [
-    { title = "github", href = "https://github.com" },
+    { title = "Github", href = "https://github.com" },
 ]

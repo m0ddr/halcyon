@@ -166,6 +166,30 @@ main, header {
     }
 }
 
+.breadcrumbs {
+    font-size: 0.9em;
+
+    a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .breadcrumb-separator {
+        margin: 0 0.5em;
+        color: var(--secondary);
+    }
+
+    .breadcrumb-current {
+        color: var(--foreground);
+        font-weight: 400;
+    }
+}
+
 .space {
     margin-bottom: 1em;
 }

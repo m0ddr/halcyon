@@ -5,10 +5,38 @@
 
 {% block header %}
 <header class="doublespace footnote-definition">
-    <a href="javascript:history.go(-1)">&LeftArrow; Back</a>
+    <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        {% if page %}
+            {% if page.ancestors %}
+                {% for ancestor in page.ancestors %}
+                    {% if ancestor and ancestor != "/" and ancestor != "" %}
+                        {% set ancestor_section = get_section(path=ancestor) %}
+                        {% if ancestor_section and ancestor_section.title %}
+                            <span class="breadcrumb-separator">/</span>
+                            <a href="{{ ancestor_section.permalink }}">{{ ancestor_section.title }}</a>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">{{ page.title }}</span>
+        {% elif section %}
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">{{ section.title }}</span>
+        {% elif term %}
+            <span class="breadcrumb-separator">/</span>
+            <a href="{{ get_taxonomy(kind=taxonomy.name) | get(key='permalink') }}">{{ taxonomy.name | capitalize }}</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">{{ term.name }}</span>
+        {% elif taxonomy %}
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">{{ taxonomy.name | capitalize }}</span>
+        {% endif %}
+    </nav>
 </header>
 
-{% if page.extra.math %}
+{% if page and page.extra.math %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>

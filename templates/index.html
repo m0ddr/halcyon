@@ -52,7 +52,7 @@
         {% if config.extra.links or linked_pages %}
         <nav class="header-links">
             {% set blog = get_section(path="posts/_index.md") %}
-            <a href="{{ blog.permalink }}">posts</a>
+            <a href="{{ blog.permalink }}">Posts</a>
             {% for page in linked_pages %}
             <a href="{{ page.permalink }}">{{ page.title }}</a>
             {% endfor %}
