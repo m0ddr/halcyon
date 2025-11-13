@@ -142,13 +142,6 @@ Display repository information:
 {{ gh_repo(owner="rust-lang", repo="rust") }}
 ```
 
-#### YouTube Videos
-Embed YouTube videos:
-
-```markdown
-{{ youtube(id="VIDEO_ID") }}
-```
-
 ### Tags
 Posts can be tagged using the taxonomies system:
 
