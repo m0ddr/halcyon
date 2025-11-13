@@ -31,16 +31,12 @@ $$math$$ for display math
 ## Images
 Images should be pretty self explainitory, for personal preference I've set images to center themselves subject to size on the page
 
-![image](images/1.jpg)
-
-## Youtube shortcode
-I've also added a youtube shorcode. It's set up with a few handy defaults and takes a video ID.
-
-{{ youtube(id="6BBgKWJRx1o") }}
+{{figure(src="images/1.jpg", alt="Example image", caption="Example caption demonstrating figure captions")}}
 
 Usage:
 ```markdown
-{ youtube(id="6BBgKWJRx1o") } # This would be double curly brackets
+{figure(src="images/example.jpg", alt="Description", caption="Example caption")} # With caption (double curly brackets)
+{figure(src="images/example.jpg", alt="Description")} # Without caption (double curly brackets)
 ```
 
 ## Github Repos
