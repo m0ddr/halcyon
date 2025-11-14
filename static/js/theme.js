@@ -21,5 +21,7 @@ if (sessionTheme === "dark") {
   setDark();
 }
 
-document.getElementById("dark-mode-on").addEventListener("click", setDark);
-document.getElementById("dark-mode-off").addEventListener("click", setLight);
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("dark-mode-on").addEventListener("click", setDark);
+  document.getElementById("dark-mode-off").addEventListener("click", setLight);
+});
