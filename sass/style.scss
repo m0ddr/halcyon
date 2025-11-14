@@ -3,8 +3,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/woff2/InterVariable.woff2') format('woff2'),
-       url('/fonts/ttf/InterVariable.ttf') format('truetype');
+  src: url('/fonts/woff2/InterVariable.woff2') format('woff2');
 }
 
 @font-face {
@@ -12,8 +11,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/woff2/InterVariable-Italic.woff2') format('woff2'),
-       url('/fonts/ttf/InterVariable-Italic.ttf') format('truetype');
+  src: url('/fonts/woff2/InterVariable-Italic.woff2') format('woff2');
 }
 
 @mixin light-theme {
