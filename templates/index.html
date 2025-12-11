@@ -6,37 +6,9 @@
     <meta name="description" content="{% block description %}{{ section.description | default(value=config.description) }}{% endblock description %}">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     {% block extra_head %}
-    <link rel="preload" href="/fonts/woff2/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}"></noscript>
+    <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
     <script>
-const cls = document.documentElement.classList;
-const sessionTheme = sessionStorage.getItem("theme");
-
-const setDark = () => {
-  cls.add("dark-mode");
-  cls.remove("light-mode");
-  sessionStorage.setItem("theme", "dark");
-};
-
-const setLight = () => {
-  cls.add("light-mode");
-  cls.remove("dark-mode");
-  sessionStorage.setItem("theme", "light");
-};
-
-if (sessionTheme === "dark") {
-  setDark();
-} else if (sessionTheme === "light") {
-  setLight();
-} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  setDark();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("dark-mode-on").addEventListener("click", setDark);
-  document.getElementById("dark-mode-off").addEventListener("click", setLight);
-});
+(()=>{const c=document.documentElement.classList,t=sessionStorage.getItem("theme"),s=(m,o)=>{c.add(m);c.remove(o);sessionStorage.setItem("theme",m.replace("-mode",""))};t==="dark"?s("dark-mode","light-mode"):t==="light"?s("light-mode","dark-mode"):window.matchMedia("(prefers-color-scheme: dark)").matches&&s("dark-mode","light-mode");document.addEventListener("DOMContentLoaded",()=>{document.getElementById("dark-mode-on").addEventListener("click",()=>s("dark-mode","light-mode"));document.getElementById("dark-mode-off").addEventListener("click",()=>s("light-mode","dark-mode"))})})();
     </script>
     {% endblock extra_head %}
     {% block feed_link %}
