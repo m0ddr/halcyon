@@ -1,75 +1,32 @@
-# Hook
+# Halcyon
 
-A clean and simple personal site/blog theme for [Zola](https://getzola.org).
-
-[Demo](https://inputusername.github.io/zola-hook/)
-
-## Setup
-
-Clone this repo into your `themes` folder:
-```sh
-cd themes
-git clone https://github.com/InputUsername/zola-hook.git hook
-```
-
-Then, enable it in your `config.toml`:
-```toml
-theme = "hook"
-```
-
-## Features
-
-The following templates are built-in:
-- `index.html` - the homepage;
-- `page.html` - pages and posts (extends `index.html`);
-- `section.html` - archive of pages in a section, mostly for a blog (extends `page.html`);
-- `404.html` - 404 page (extends `page.html`).
-
-Templates have the following Tera blocks:
-- `title` - to override the default `<title>` (`config.title`);
-- `description` - to override the `<meta name="description">`'s content (`config.description`);
-- `extra_head` - to override styles and anything else in `<head>`;
-- `header` - to change the header (best to put this in a `<header>`);
-- `content` - to change the content (best to put this in a `<main>`).
-
-You can set a section or page description using `description` in your front matter.
-By default, the `description` in `config.toml` is used.
-
-You can define links to include in the header on the homepage in `config.toml`:
-```toml
-[extra]
-
-links = [
-    { title = "Link display text", href = "http://example.com" },
-    # ...
-]
-```
-
-Pages in the root section can define `extra.in_header = true` to be included in the header links on the homepage.
-
-The content in the root `_index.md` is included in the homepage if present.
-
-Below that is a list of the 20 most recent posts. For this, the `blog/_index.md` section is expected to exist
-(will error if it doesn't exist). There is also a link to an archive of all blog posts by year.
-
-Hook supports light/dark mode based on the user's preference. There is also a manual toggle button
-(requires JavaScript).
+A minimal Zola theme built on [zola-hook](https://github.com/InputUsername/zola-hook) with layout design from [serene](https://github.com/isunjn/serene).
 
 ## Screenshots
+![Light](screenshots/halcyon-light.png)
+![Dark](screenshots/halcyon-dark.png)
 
-### Homepage
+## Features
+- GitHub repository cards with live stats
+- KaTeX math rendering
+- Code block copy buttons
+- Light and dark themes
+- Responsive design
 
-![Homepage](screenshot.png)
+## Installation
+```bash
+# Create a new Zola site
+zola init my-blog && cd my-blog
 
-### Blog post
-![Blog post](screenshot2.png)
+# Add the theme
+git clone https://github.com/m0ddr/halcyon themes/halcyon
 
-### Blog archive
-![Blog archive](screenshot3.png)
-
-### Dark mode
-![Dark mode](screenshot4.png)
+# Configure in config.toml
+theme = "halcyon"
+```
 
 ## License
+MIT License - see [LICENSE](LICENSE) for details.
 
-MIT license, see [`LICENSE`](https://github.com/InputUsername/zola-hook/blob/main/LICENSE).
+## Credits
+Based on [zola-hook](https://github.com/InputUsername/zola-hook) by InputUsername and [serene](https://github.com/isunjn/serene) by isunjn.
